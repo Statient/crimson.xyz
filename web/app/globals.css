@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 3%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 3%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 346 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 270 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 70%;
+  --accent: 346 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 346 100% 50%;
+}
+
+body {
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-slower {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation classes */
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Reduce the intensity of glow effects */
+.bloom-effect {
+  animation: bloom 3s ease-in-out infinite;
+  animation-play-state: paused; /* Disable by default */
+}
+
+.bloom-effect:hover {
+  animation-play-state: running; /* Only play on hover */
+}
+
+/* Tone down the glow effects */
+@keyframes bloom {
+  0% {
+    box-shadow: 0 0 10px 0 rgba(255, 0, 85, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 85, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 10px 0 rgba(255, 0, 85, 0.15);
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.glow-container {
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glow-container:hover {
+  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.2);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Simplify the hover glow effect */
+.glow-on-hover::before {
+  opacity: 0;
+  background: linear-gradient(45deg, #333, #444, #555);
+}
+
+.glow-on-hover:hover::before {
+  opacity: 0.3;
+}
